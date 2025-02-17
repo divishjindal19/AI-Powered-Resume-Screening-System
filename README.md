@@ -43,15 +43,22 @@ Regex (re): For text cleaning and preprocessing.
 
 # Usage
 Open the app in your browser after running the Streamlit command.
+
 Upload a resume file (PDF, DOCX, or TXT).
+
 View the extracted text (optional).
+
 See the predicted job category for the uploaded resume.
 
 # Pre-Trained Models
 The system uses the following pre-trained models and files:
+
 clf.pkl: Trained classifier for job category prediction. (Skipped this file in the repository due to size issue)
+
 tfidf.pkl: TF-IDF vectorizer for text transformation.
+
 encoder.pkl: Label encoder for decoding predicted categories.
 
 Ensure these files are present in the project directory for the system to function correctly.
+
 Enjoy using the AI-Powered Resume Screening System! 🚀
