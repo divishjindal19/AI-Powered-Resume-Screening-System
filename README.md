@@ -41,19 +41,6 @@ Pickle: For loading pre-trained models and vectorizers.
 
 Regex (re): For text cleaning and preprocessing.
 
-# Installation
-Clone the repository:
-git clone https://github.com/your-username/ai-resume-screening-system.git
-
-# Navigate to the project directory:
-cd ai-resume-screening-system
-
-# Install the required dependencies:
-pip install -r requirements.txt
-
-# Run the Streamlit app:
-streamlit run app.py
-
 # Usage
 Open the app in your browser after running the Streamlit command.
 Upload a resume file (PDF, DOCX, or TXT).
