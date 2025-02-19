@@ -11,7 +11,7 @@ Text Cleaning: Preprocesses and cleans resume text for better analysis.
 
 Job Category Prediction: Uses a pre-trained machine learning model to predict the job category of a resume.
 
-User-Friendly Interface: Built with Streamlit for an intuitive and interactive web interface.
+User-Friendly Interface: Built with Streamlit for an intuitive and interactive webinterface.
 
 Flexible File Support: Handles multiple file formats for convenience.
 
