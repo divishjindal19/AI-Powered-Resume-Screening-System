@@ -86,24 +86,11 @@ def rank_resumes(job_description, resumes):
 def main():
     st.set_page_config(page_title="Resume Category Predictor", page_icon="📄", layout="wide")
     st.title("AI-Powered Resume Screening System")
-    st.markdown("Upload a resume in PDF, DOCX, or TXT format to predict its job category.")
+    st.markdown("Enter a job description to rank resumes.")
     
-    uploaded_file = st.file_uploader("Choose a Resume File", type=["pdf", "docx", "txt"])
     job_description = st.text_area("Enter the job description")
     
-    if uploaded_file is not None:
-        try:
-            resume_text = process_uploaded_file(uploaded_file)
-            st.success("Text extracted successfully from the uploaded resume.")
-            if st.checkbox("Show Extracted Text", False):
-                st.text_area("Extracted Resume Text", resume_text, height=300)
-            st.subheader("Prediction Result")
-            category = predict_category(resume_text)
-            st.write(f"The predicted job category for the uploaded resume is: **{category}**")
-        except Exception as e:
-            st.error(f"An error occurred while processing the file: {str(e)}")
-    
-    uploaded_files = st.file_uploader("Upload additional resumes for ranking", type=["pdf", "docx", "txt"], accept_multiple_files=True)
+    uploaded_files = st.file_uploader("Upload resumes for ranking", type=["pdf", "docx", "txt"], accept_multiple_files=True)
     
     if uploaded_files and job_description:
         resumes = [process_uploaded_file(file) for file in uploaded_files]
@@ -112,6 +99,10 @@ def main():
         results = results.sort_values(by="Score", ascending=False)
         st.subheader("Ranked Resumes")
         st.write(results)
+        
+        for file, text in zip(uploaded_files, resumes):
+            st.subheader(f"Extracted Text from {file.name}")
+            st.text_area("Extracted Resume Text", text, height=300)
 
 if __name__ == "__main__":
     main()
